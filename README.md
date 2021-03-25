@@ -13,47 +13,7 @@ The bad news is...there really is no bad news 🤷‍♂️
 -----------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-That's it.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Well, OK, since you scrolled this far, here's all the stuff that came with the create-react-app README:
+Here's all the stuff that came with the create-react-app README:
 
 
 -----------------------------------------------------
