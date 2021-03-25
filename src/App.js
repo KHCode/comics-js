@@ -18,27 +18,29 @@ const Layout = styled.main`
 
 function App() {
   const { register, handleSubmit } = useForm();//form handlers, from react-hook-form
-  const [ characterName, setCharacterName ] = useState('spider-man');//set after user clicks submit
+  const [ searchName, setSearchName ] = useState('spider-man');//set after user clicks submit
   const [ charObject, setCharObject ] = useState({});
   const [ isLoading, setIsLoading ] = useState();
   const [ isError, setIsError ] = useState(false);
   const [ error, setError ] = useState();
+  const [ characterName, setCharacterName ] = useState();
   const [ characterDesc, setCharacterDescription ] = useState('');
   const [ characterImgPath, setCharacterImgPath ] = useState('');
   const [ characterImgExt, setCharacterImgExt ] = useState('');
   // const [ marvelATag, ]
 
   const onSubmit = data => {  //when user clicks submit, characterName is set
-    setCharacterName(data.characterName);
+    setSearchName(data.searchName);
   }
 
   useEffect(() => {   //this useQuery hook used for initial call on page load
     setIsLoading(true);
-    fetch(`${CHARACTER_URL}&name=${characterName}`)
+    fetch(`${CHARACTER_URL}&name=${searchName}`)
     .then(res => res.json())
     .then((result) => {
         setIsLoading(false);
         setCharObject(result.data.results[0]);
+        setCharacterName(result.data.results[0].name);
         setCharacterDescription(result.data.results[0].description);
         setCharacterImgPath(result.data.results[0].thumbnail.path);
         setCharacterImgExt(result.data.results[0].thumbnail.extension);
@@ -52,11 +54,12 @@ function App() {
 
   useEffect(() => {   //this useEffect hook used for calls made when a user clicks submit
     setIsLoading(true);
-    fetch(`${CHARACTER_URL}&name=${characterName}`)
+    fetch(`${CHARACTER_URL}&name=${searchName}`)
       .then(res => res.json())
       .then((result) => {
         setIsLoading(false);
         setCharObject(result.data.results[0]);//sets charObject with data returned from API
+        setCharacterName(result.data.results[0].name);
         setCharacterDescription(result.data.results[0].description);
         setCharacterImgPath(result.data.results[0].thumbnail.path);
         setCharacterImgExt(result.data.results[0].thumbnail.extension);
@@ -65,7 +68,7 @@ function App() {
         setIsError(true);
         setError(err);
       })},
-    [characterName]
+    [searchName]
   )
 
   useEffect(() => {   //b/c charObject is dependency, this will run after API call returns 
@@ -74,13 +77,13 @@ function App() {
 
   if (isLoading) return <span>Loading...</span>;
 
-  if (isError) return <span>Error: {error.message}</span>;
+  if (isError) return <span>Error: {error}</span>;
 
   return (
     <>
       <GlobalStyle />
       <Layout>
-        <NameSearch name={characterName} handleSubmit={handleSubmit} onSubmit={onSubmit} register={register} />
+        <NameSearch name={searchName} handleSubmit={handleSubmit} onSubmit={onSubmit} register={register} />
         <Character
           characterName={characterName}
           characterDesc={characterDesc}

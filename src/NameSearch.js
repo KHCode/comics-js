@@ -13,7 +13,7 @@ export default function NameSearch (props) {
             <h1>Find a Character</h1>
 
             <label>Name:</label>
-            <input type="text" name="characterName" placeholder="enter character name" ref={props.register} />
+            <input type="text" name="searchName" placeholder="enter character name" ref={props.register} />
             <input type="submit" />
         </CharacterForm>
         

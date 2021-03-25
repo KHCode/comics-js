@@ -16,6 +16,7 @@ const SearchResults = styled.div`
     letter-spacing: 0.2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 3rem;
 `;
 
@@ -23,7 +24,6 @@ const CharacterAvatar = styled.img`
     height: 150px;
     width: 150px;
     border-radius: 75px;
-    align-self: center;
 `;
 
 const CharacterDesc = styled.p`
