@@ -1,5 +1,62 @@
-# Getting Started with Create React App
+# Welcome to comics-js!
 
+This is where I am playing around with the Marvel API
+and practicing my ReactJS skills. 
+
+Feel free to use this, but if you do, you're going to need
+to get a developer account [here](https://developer.marvel.com/).
+
+The good news is it's free 🎉🥳🎉
+
+The bad news is...there really is no bad news 🤷‍♂️
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+That's it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Well, OK, since you scrolled this far, here's all the stuff that came with the create-react-app README:
+
+
+-----------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
