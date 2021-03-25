@@ -11,6 +11,7 @@ const SearchResults = styled.div`
     border-radius: 2rem;
     box-shadow: blue 2rem 2rem;
     width: 50%;
+    height: 60rem;
     background: red;
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
