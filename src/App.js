@@ -24,10 +24,12 @@ function App() {
   const [ isLoading, setIsLoading ] = useState(true);
   const [ isError, setIsError ] = useState(false);
   // const [ error, setError ] = useState();
+  const [ characterId, setCharacterId ] = useState();
   const [ characterName, setCharacterName ] = useState('');
   const [ characterDesc, setCharacterDescription ] = useState('');
   const [ characterImgPath, setCharacterImgPath ] = useState('');
   const [ characterImgExt, setCharacterImgExt ] = useState('');
+  const [ characterEvents, setCharacterEvents ] = useState([]);
   const [ isEmpty, setIsEmpty ] = useState(false);
   const [ searchType, setSearchType ] = useState('exactName');
 
@@ -56,6 +58,7 @@ function App() {
       }
       setIsEmpty(false);
       setCharObject(result.data.results[0]);
+      setCharacterId(result.data.results[0].id);
       setCharacterName(result.data.results[0].name);
       setCharacterDescription(result.data.results[0].description);
       setCharacterImgPath(result.data.results[0].thumbnail.path);
@@ -82,6 +85,7 @@ function App() {
         }
         setIsEmpty(false);
         setCharObject(result.data.results[0]);//sets charObject with data returned from API
+        setCharacterId(result.data.results[0].id);
         setCharacterName(result.data.results[0].name);
         setCharacterDescription(result.data.results[0].description);
         setCharacterImgPath(result.data.results[0].thumbnail.path);
