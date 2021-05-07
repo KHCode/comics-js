@@ -7,12 +7,12 @@ const CharacterForm = styled.form`
     justify-content: space-evenly;
     align-items: center;
     margin: 3rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
     font: 'Roboto';
     font-size: 2rem;
     color: white;
     width: 80%;
-    height: 70vh;
+    height: 55vh;
     background: purple;
     border-radius: 2rem;
 `;
@@ -23,6 +23,8 @@ const TextInput = styled.input`
     border-radius: 1rem;
     padding: 1rem;
     width: 100%;
+    border: none;
+    outline: none;
 `;
 
 const TextFieldInputSection = styled.section`
@@ -43,7 +45,7 @@ const SearchOptionsSection = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 20%;
+    height: 25%;
     border-radius: 2rem;
 `;
 
@@ -96,8 +98,10 @@ const Blurb = styled.p`
 
 const SubmitButton = styled.input`
     padding: 0.5rem;
+    font-size: 2rem;
     width: 10rem;
     border-radius: 1rem;
+    border: none;
 `;
 
 const NoResultsMessage = (props) => {
