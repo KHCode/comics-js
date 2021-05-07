@@ -14,7 +14,7 @@ const Layout = styled.main`
   flex-wrap: wrap;
   ${'' /* flex-direction: column; */}
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 function App() {
